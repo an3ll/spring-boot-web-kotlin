@@ -10,7 +10,7 @@ import org.springframework.context.annotation.Bean
 
 @SpringBootApplication
 open class DemoRestApplication {
-    private val LOGGER = AppLogger.get(DemoRestApplication::class.java)
+    private val log = AppLogger.get(DemoRestApplication::class.java)
 
     companion object {
         @JvmStatic
@@ -27,6 +27,6 @@ open class DemoRestApplication {
             ctx: ConfigurableApplicationContext,
             @Value("\${app.appName}") appName: String
     ) = CommandLineRunner {
-        LOGGER.info("=== init $appName - $ctx =====")
+        log.info("=== init $appName - $ctx =====")
     }
 }
