@@ -15,7 +15,7 @@ open class UserService {
   fun getById(id: String) = User(
       id = id,
       firstName = "Hans",
-      lastName =  "Gruber",
+      lastName = "Gruber",
       email = "hans_gruber@hotmail.com"
   )
 

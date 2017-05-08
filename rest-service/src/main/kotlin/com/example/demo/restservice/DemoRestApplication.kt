@@ -10,23 +10,23 @@ import org.springframework.context.annotation.Bean
 
 @SpringBootApplication
 open class DemoRestApplication {
-    private val log = AppLogger.get(DemoRestApplication::class.java)
+  private val log = AppLogger.get(DemoRestApplication::class.java)
 
-    companion object {
-        @JvmStatic
-        fun main(args: Array<String>) {
-            SpringApplicationBuilder()
-                    .sources(DemoRestApplication::class.java)
-                    .web(true)
-                    .run(*args)
-        }
+  companion object {
+    @JvmStatic
+    fun main(args: Array<String>) {
+      SpringApplicationBuilder()
+          .sources(DemoRestApplication::class.java)
+          .web(true)
+          .run(*args)
     }
+  }
 
-    @Bean
-    open fun init(
-            ctx: ConfigurableApplicationContext,
-            @Value("\${app.appName}") appName: String
-    ) = CommandLineRunner {
-        log.info("=== init $appName - $ctx =====")
-    }
+  @Bean
+  open fun init(
+      ctx: ConfigurableApplicationContext,
+      @Value("\${app.appName}") appName: String
+  ) = CommandLineRunner {
+    log.info("=== init $appName - $ctx =====")
+  }
 }
